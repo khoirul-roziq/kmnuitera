@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PanelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,7 @@ use App\Http\Controllers\PagesController;
 |
 */
 
-Route::get('/', [PagesController::class, 'dashboard']);
-Route::get('/keanggotaan', [PagesController::class, 'keanggotaan']);
-Route::get('/keuangan', [PagesController::class, 'keuangan']);
+Route::get('/', [PanelController::class, 'index']);
+Route::get('/dashboard', [PanelController::class, 'dashboard']);
+Route::get('/keanggotaan', [PanelController::class, 'keanggotaan']);
+Route::get('/keuangan', [PanelController::class, 'keuangan']);

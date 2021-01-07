@@ -1,4 +1,4 @@
-@extends('layout/main')
+@extends('layout/panel')
 
 @section('title', 'Keuangan')
 

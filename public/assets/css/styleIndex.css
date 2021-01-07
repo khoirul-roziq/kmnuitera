@@ -1,0 +1,126 @@
+/* navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+/* end navbar */
+
+/* jumbotron */
+.jumbotron {
+    height: 500px;
+    padding-top: 150px;
+    padding-bottom: 100px;
+    padding-left: 7%;
+}
+/* end jumbotron */
+
+/* container */
+
+h6 {
+    text-align: center;
+}
+
+.spasi {
+    margin-bottom: 500px;
+}
+
+#sk {
+    margin-top: 100px;
+}
+
+#jv,
+#sk {
+    color: seagreen;
+}
+
+hr {
+    width: 400px;
+    border-top: 3px solid green;
+    margin: 10px auto 10px;
+}
+
+/* end container */
+
+/* profile */
+.profile1,
+.profile2,
+.profile3 {
+    width: 100%;
+    height: 450px;
+    text-align: center;
+}
+
+.profile1 .profile,
+.profile2 .profile,
+.profile3 .profile {
+    display: inline-block;
+}
+
+.profile {
+    /* border: 1px solid black; */
+    width: 200px;
+    text-align: center;
+}
+
+.profile p {
+    line-height: 5px;
+    font-size: 14px;
+}
+
+.profile h6 {
+    font-size: 15px;
+}
+
+.photo {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.photo img {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+
+#waketum,
+#wabendum,
+#wasekum {
+    position: relative;
+    top: 100px;
+}
+
+#sekum {
+    margin-left: 150px;
+}
+
+h4 {
+    color: brown;
+}
+
+/* end profile */
+
+/* footer */
+
+footer {
+    background-color: #122620;
+    height: 300px;
+    padding-top: 50px;
+    color: whitesmoke;
+}
+
+footer img {
+    display: block;
+    margin: auto;
+}
+
+footer hr {
+    width: 200px;
+    border-top: 3px solid whitesmoke;
+    margin: 10px auto 10px;
+}
+
+/* end footer */

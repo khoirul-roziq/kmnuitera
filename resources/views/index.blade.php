@@ -20,7 +20,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
     <div class="container-fluid mx-5">
       <a class="navbar-brand" href="#">
-        <img src="{{ url('/assets/img/brand.png')}}" alt="" height="40">
+        <img src="{{ url('/assets/img/logo/brand.png')}}" alt="" height="40">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,10 +28,10 @@
       <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item me-4">
-            <a class="nav-link active" aria-current="page" href="#">Daftar Anggota</a>
+            <a class="nav-link active" aria-current="page" href="{{ url('/formreg')}}">Daftar Anggota</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">Masuk</a>
+            <a class="nav-link active masuk" href="#">Login</a>
           </li>
         </ul>
       </div>
@@ -39,12 +39,57 @@
   </nav>
   <!-- end navbar -->
 
+  <!-- login -->
+  <div class="bg-transparan display-none">
+    <div class="login">
+
+      <div class="close">
+        <input type="checkbox">
+        <span></span>
+        <span></span>
+      </div>
+
+      <h3 class="text-center">Login</h3>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email/ Username</label>
+        <input type="text" class="form-control" id="email" placeholder="Masukan Email atau Username">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Masukan Password">
+      </div>
+
+      <div class="captcha mb-3">
+        <label for="captcha" class="form-label">Berapa hasil dari 4 + 7 ?</label>
+        <input type="text" class="form-control" id="captcha" placeholder="Hasil">
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Ingat saya!</label>
+      </div>
+
+      <button type="button" class="btn btn-success">Login</button>
+      <button type="button" class="btn btn-secondary">Login sebagai tamu</button>
+
+      <span>Lupa password? <a href="">Klik di sini!</a></span>
+    </div>
+
+    <div class="link-reg">
+      <h5>Apakah kamu pertama kali mengunjungi situs ini?</h5>
+      <p>Untuk mendapatkan akses penuh, silahkan daftar anggota terlebih dahulu!</p>
+      <a href="{{ url('/formreg')}}"><button type="button" class="btn btn-primary btn-create">Daftar Anggota</button></a>
+    </div>
+  </div>
+  <!-- end login -->
+
   <!-- jumbotron -->
   <div class="bg-light jumbotron">
     <h3>Selamat Datang di Situs</h3>
     <h1>Keluarga Mahasiswa Nahdlatul Ulama</h1>
     <h1>Institut Teknologi Sumatera</h1>
-    <button type="button" class="btn btn-warning m-5">Jelajahi Blog</button>
+    <a href="{{ url('/blog') }}"><button type="button" class="btn btn-warning m-5">Jelajahi Blog</button></a>
   </div>
   <!-- end jumbotron -->
 
@@ -58,16 +103,16 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="assets/img/1.jpg" class="d-block w-100" alt="img1">
+        <img src="assets/img/kegiatan/1.jpg" class="d-block w-100" alt="img1">
       </div>
       <div class="carousel-item">
-        <img src="assets/img/2.jpg" class="d-block w-100" alt="img2">
+        <img src="assets/img/kegiatan/2.jpg" class="d-block w-100" alt="img2">
       </div>
       <div class="carousel-item">
-        <img src="assets/img/3.jpg" class="d-block w-100" alt="img3">
+        <img src="assets/img/kegiatan/3.jpg" class="d-block w-100" alt="img3">
       </div>
       <div class="carousel-item">
-        <img src="assets/img/4.jpg" class="d-block w-100" alt="img3">
+        <img src="assets/img/kegiatan/4.jpg" class="d-block w-100" alt="img3">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -88,7 +133,7 @@
   <h6>Membangun generasi muda yang berkarakter dan mampu mengamalkan ajaran</h6>
   <h6>Ahlussunnah Wal Jama'ah An-Nahdliyah</h6>
   <div class="position-relative mt-5">
-    <button type="button" class="btn btn-success position-absolute top-0 start-50 translate-middle">Daftar Anggota</button>
+    <a href="{{ url('/formreg') }}"><button type="button" class="btn btn-success position-absolute top-0 start-50 translate-middle">Daftar Anggota</button></a>
   </div>
 
   <h2 class="text-center pt-5 pb-1" id="sk">Struktur Kepengurusan</h2>
@@ -100,19 +145,29 @@
     <div class="profile" id="ketum">
       <h6>Ketua Umum</h6>
       <div class="photo">
-        <img src="{{ url('assets/img/avatar.png') }}" alt="Foto Profil">
+        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
       </div>
       <h5>Khoirul Roziq</h5>
       <p>Teknik Informatika</p>
+      <div class="sosprof">
+        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+      </div>
     </div>
 
     <div class="profile" id="waketum">
       <h6>Wakil Ketua Umum</h6>
       <div class="photo">
-        <img src="{{ url('assets/img/avatar.png') }}" alt="Foto Profil">
+        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
       </div>
       <h5>Khoirul Roziq</h5>
       <p>Teknik Informatika</p>
+      <div class="sosprof">
+        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+      </div>
     </div>
   </div>
 
@@ -120,39 +175,59 @@
     <div class="profile" id="bendum">
       <h6>Bendahara Umum</h6>
       <div class="photo">
-        <img src="{{ url('assets/img/avatar.png') }}" alt="Foto Profil">
+        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
       </div>
       <h5>Khoirul Roziq</h5>
       <p>Teknik Informatika</p>
+      <div class="sosprof">
+        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+      </div>
     </div>
 
 
     <div class="profile" id="wabendum">
       <h6>Wakil Bendahara Umum</h6>
       <div class="photo">
-        <img src="{{ url('assets/img/avatar.png') }}" alt="Foto Profil">
+        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
       </div>
       <h5>Khoirul Roziq</h5>
       <p>Teknik Informatika</p>
+      <div class="sosprof">
+        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+      </div>
     </div>
 
     <div class="profile" id="sekum">
       <h6>Sekretaris Umum</h6>
       <div class="photo">
-        <img src="{{ url('assets/img/avatar.png') }}" alt="Foto Profil">
+        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
       </div>
       <h5>Khoirul Roziq</h5>
       <p>Teknik Informatika</p>
+      <div class="sosprof">
+        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+      </div>
     </div>
 
 
     <div class="profile" id="wasekum">
       <h6>Wakil Sekretaris Umum</h6>
       <div class="photo">
-        <img src="{{ url('assets/img/avatar.png') }}" alt="Foto Profil">
+        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
       </div>
       <h5>Khoirul Roziq</h5>
       <p>Teknik Informatika</p>
+      <div class="sosprof">
+        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+      </div>
     </div>
 
   </div>
@@ -163,46 +238,71 @@
     <div class="profile" id="kd">
       <h6>Kajian dan Dakwah</h6>
       <div class="photo">
-        <img src="{{ url('assets/img/avatar.png') }}" alt="Foto Profil">
+        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
       </div>
       <h5>Khoirul Roziq</h5>
       <p>Teknik Informatika</p>
+      <div class="sosprof">
+        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+      </div>
     </div>
 
     <div class="profile" id="kdr">
       <h6>Kaderisasi</h6>
       <div class="photo">
-        <img src="{{ url('assets/img/avatar.png') }}" alt="Foto Profil">
+        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
       </div>
       <h5>Khoirul Roziq</h5>
       <p>Teknik Informatika</p>
+      <div class="sosprof">
+        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+      </div>
     </div>
 
     <div class="profile" id="rpt">
       <h6>Riset dan Pengembangan Teknologi</h6>
       <div class="photo">
-        <img src="{{ url('assets/img/avatar.png') }}" alt="Foto Profil">
+        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
       </div>
       <h5>Khoirul Roziq</h5>
       <p>Teknik Informatika</p>
+      <div class="sosprof">
+        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+      </div>
     </div>
 
     <div class="profile" id="kom">
       <h6>Kominfo</h6>
       <div class="photo">
-        <img src="{{ url('assets/img/avatar.png') }}" alt="Foto Profil">
+        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
       </div>
       <h5>Khoirul Roziq</h5>
       <p>Teknik Informatika</p>
+      <div class="sosprof">
+        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+      </div>
     </div>
 
     <div class="profile" id="kwu">
       <h6>Kewirausahaan</h6>
       <div class="photo">
-        <img src="{{ url('assets/img/avatar.png') }}" alt="Foto Profil">
+        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
       </div>
       <h5>Khoirul Roziq</h5>
       <p>Teknik Informatika</p>
+      <div class="sosprof">
+        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+      </div>
     </div>
 
   </div>
@@ -211,7 +311,7 @@
 
   <!-- footer -->
   <footer>
-    <img src="{{ url('assets/img/logo.png') }}" alt="logo" height="60">
+    <img src="{{ url('assets/img/logo/logo.png') }}" alt="logo" height="60">
     <h6 class="pt-2">KMNU ITERA</h6>
     <hr>
     <p class="text-center">&copy; 2021 Dibuat Oleh DRPT KMNU ITERA</p>

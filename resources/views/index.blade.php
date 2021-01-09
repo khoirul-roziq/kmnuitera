@@ -11,6 +11,7 @@
 
   <script type="text/javascript" src="{{ url('/assets/js/JQuery3.3.1.js')}}"></script>
   <script type="text/javascript" src="{{ url('/assets/js/lightslider.js')}}"></script>
+
   <title>KMNU ITERA</title>
 </head>
 
@@ -314,11 +315,12 @@
     <img src="{{ url('assets/img/logo/logo.png') }}" alt="logo" height="60">
     <h6 class="pt-2">KMNU ITERA</h6>
     <hr>
-    <p class="text-center">&copy; 2021 Dibuat Oleh DRPT KMNU ITERA</p>
+    <p class="text-center">&copy; 2021 Dikelola Oleh Departemen RPT KMNU ITERA</p>
   </footer>
   <!-- end footer -->
 
   <script src="{{ url('assets/js/script.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
 </body>
 

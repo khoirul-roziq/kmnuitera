@@ -22,7 +22,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="{{ url('/')}}">Dashboard</a>
+                    <a class="nav-link active" aria-current="page" href="{{ url('/dashboard')}}">Dashboard</a>
                     <a class="nav-link" href="{{ url('/keanggotaan')}}">Keanggotaan</a>
                     <a class="nav-link" href="{{ url('/keuangan')}}">Keuangan</a>
                     <a class="nav-link" href="{{ url('/blog/wp-login.php')}}">Blog</a>

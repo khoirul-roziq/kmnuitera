@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PanelController;
-use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\MembersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,6 @@ use App\Http\Controllers\AnggotaController;
 
 Route::get('/', [PanelController::class, 'index']);
 Route::get('/dashboard', [PanelController::class, 'dashboard']);
-Route::get('/keanggotaan', [AnggotaController::class, 'index']);
+Route::get('/members', [MembersController::class, 'index']);
 Route::get('/keuangan', [PanelController::class, 'keuangan']);
 Route::get('/formreg', [PanelController::class, 'formreg']);

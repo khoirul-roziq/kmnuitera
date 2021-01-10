@@ -15,23 +15,22 @@
             <tr>
                 <th scope="col">No</th>
                 <th scope="col">Nama</th>
-                <th scope="col">Nomor Anggota</th>
+                <th scope="col">NIA</th>
                 <th scope="col">Program Studi</th>
                 <th scope="col">Predikat</th>
                 <th scope="col">Aksi</th>
             </tr>
         </thead>
         <tbody>
-            @foreach( $anggota as $agt )
+            @foreach( $members as $member )
             <tr>
                 <td scope="row">{{ $loop->iteration }}</td>
-                <td>{{ $agt->nama }}</td>
-                <td>{{ $agt->nomor_anggota }}</td>
-                <td>{{ $agt->prodi }}</td>
-                <td>{{ $agt->predikat }}</td>
+                <td>{{ $member->nama }}</td>
+                <td>{{ $member->nia }}</td>
+                <td>{{ $member->prodi }}</td>
+                <td>{{ $member->predikat }}</td>
                 <td>
-                    <a href="#"><span href="#" class="badge bg-success">Detail</span></a>
-                    <a href="#"><span href="#" class="badge bg-danger">Hapus</span></a>
+                    <a href="#"><span href="#" class="badge bg-primary">Detail</span></a>
                 </td>
             </tr>
             @endforeach

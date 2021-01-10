@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\Member;
 
-class AnggotaController extends Controller
+class MembersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class AnggotaController extends Controller
      */
     public function index()
     {
-        $anggota = DB::table('data_user')->get();
-        return view('keanggotaan', ['anggota' => $anggota]);
+        $members = Member::all();
+        return view('members', compact('members'));
     }
 
     /**

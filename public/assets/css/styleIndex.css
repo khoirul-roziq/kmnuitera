@@ -143,70 +143,110 @@ hr {
 /* end container */
 
 /* profile */
-.profile1,
-.profile2,
-.profile3 {
-    width: 100%;
-    height: 450px;
-    text-align: center;
+
+.containerProfile {
+    background-color: whitesmoke;
 }
 
-.profile1 .profile,
-.profile2 .profile,
-.profile3 .profile {
-    display: inline-block;
+h4 {
+    color: seagreen;
+    text-shadow: 1px 1px 1px rgba(93, 223, 255, 0.4);
 }
 
-.profile {
-    /* border: 1px solid black; */
-    width: 200px;
-    text-align: center;
+.photo {
+    border-top-right-radius: 30%;
+    border-bottom-left-radius: 30%;
+    /* border-bottom-right-radius: 50%; */
+    overflow: hidden;
+    margin-bottom: 10px;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+.sosprof {
+    display: none;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+    padding: 7px;
+    background-color: rgba(12, 2, 102, 0.466);
+    border-radius: 30px;
+    position: relative;
+}
+
+.sosprof img {
+    height: 90%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.profile h6 {
+    font-size: 15px;
+    color: teal;
+}
+
+.profile h5 {
+    margin-top: 15px;
+    text-decoration: underline;
 }
 
 .profile p {
     line-height: 5px;
     font-size: 14px;
+    color: darkred;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
 
-.profile h6 {
-    font-size: 15px;
-}
-
-.photo {
-    border-radius: 50%;
-    overflow: hidden;
-    height: 150px;
-    margin-bottom: 10px;
+.profile {
+    width: 20%;
+    padding: 10px;
+    margin: 15px;
 }
 
 .photo img {
-    width: 150px;
-    height: 150px;
-    margin: auto;
+    width: 100%;
 }
 
-#waketum,
-#wabendum,
-#wasekum {
-    position: relative;
-    top: 100px;
+.profile1 {
+    display: flex;
+    justify-content: center;
 }
 
-#sekum {
-    margin-left: 150px;
+.profile2 {
+    display: flex;
+    justify-content: center;
 }
 
-h4 {
-    color: brown;
+.container2 {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
+.profile2 .profile {
+    width: 40%;
+}
+
+.containerProfile div {
+    text-align: center;
+}
+
+.profile3 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.profile3 .profile {
+    width: 20%;
+}
 /* end profile */
 
 /* footer */
 
 footer {
     background-color: #122620;
-    height: 300px;
+    height: 250px;
     padding-top: 50px;
     color: whitesmoke;
 }
@@ -223,3 +263,48 @@ footer hr {
 }
 
 /* end footer */
+
+/* break point */
+
+/* tablet size */
+@media screen and (max-width: 768px) {
+    body {
+        background-color: wheat;
+    }
+    .reg,
+    .masuk {
+        text-align: center;
+    }
+
+    .profile {
+        width: 30%;
+    }
+
+    .profile2 .profile {
+        width: 60%;
+    }
+
+    .profile3 .profile {
+        width: 25%;
+    }
+}
+
+/* handphone size */
+@media screen and (max-width: 576px) {
+    body {
+        background-color: green;
+    }
+    .profile {
+        width: 35%;
+    }
+
+    .profile2 .profile {
+        width: 80%;
+    }
+
+    .profile3 .profile {
+        width: 35%;
+    }
+}
+
+/* end break point */

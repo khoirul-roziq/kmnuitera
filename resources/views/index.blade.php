@@ -19,7 +19,7 @@
 
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-    <div class="container-fluid mx-5">
+    <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <img src="{{ url('/assets/img/logo/brand.png')}}" alt="" height="40">
       </a>
@@ -28,8 +28,8 @@
       </button>
       <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item me-4">
-            <a class="nav-link active" aria-current="page" href="{{ url('/formreg')}}">Daftar Anggota</a>
+          <li class="nav-item mx-4">
+            <a class="nav-link active reg" aria-current="page" href="{{ url('/formreg')}}">Daftar Anggota</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active masuk" href="#">Login</a>
@@ -137,175 +137,189 @@
     <a href="{{ url('/formreg') }}"><button type="button" class="btn btn-success position-absolute top-0 start-50 translate-middle">Daftar Anggota</button></a>
   </div>
 
-  <h2 class="text-center pt-5 pb-1" id="sk">Struktur Kepengurusan</h2>
-  <hr>
+
   <!-- profile -->
-  <h4 class="text-center mb-4 mt-5">Badan Pengurus Harian</h4>
 
-  <div class="profile1">
-    <div class="profile" id="ketum">
-      <h6>Ketua Umum</h6>
-      <div class="photo">
-        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+  <div class="containerProfile">
+    <h2 class="text-center pt-5 pb-1" id="sk">Struktur Kepengurusan</h2>
+    <hr>
+
+    <h4 class="text-center mb-2 mt-3">Badan Pengurus Harian</h4>
+
+    <div class="profile1">
+      <div class="profile" id="ketum">
+        <h6>Ketua Umum</h6>
+        <div class="photo">
+          <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+        </div>
+
+        <div class="sosprof">
+          <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+          <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+          <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+        </div>
+
+        <h5>Khoirul Roziq</h5>
+        <p>Teknik Informatika</p>
+
       </div>
-      <h5>Khoirul Roziq</h5>
-      <p>Teknik Informatika</p>
-      <div class="sosprof">
-        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
-        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
-        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+
+      <div class="profile" id="waketum">
+        <h6>Wakil Ketua Umum</h6>
+        <div class="photo">
+          <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+        </div>
+        <div class="sosprof">
+          <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+          <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+          <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+        </div>
+        <h5>Khoirul Roziq</h5>
+        <p>Teknik Informatika</p>
+
       </div>
     </div>
 
-    <div class="profile" id="waketum">
-      <h6>Wakil Ketua Umum</h6>
-      <div class="photo">
-        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
-      </div>
-      <h5>Khoirul Roziq</h5>
-      <p>Teknik Informatika</p>
-      <div class="sosprof">
-        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
-        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
-        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
-      </div>
-    </div>
-  </div>
-
-  <div class="profile2">
-    <div class="profile" id="bendum">
-      <h6>Bendahara Umum</h6>
-      <div class="photo">
-        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
-      </div>
-      <h5>Khoirul Roziq</h5>
-      <p>Teknik Informatika</p>
-      <div class="sosprof">
-        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
-        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
-        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
-      </div>
-    </div>
+    <div class="profile2">
+      <div class="container2">
+        <div class="profile" id="sekum">
+          <h6>Sekretaris Umum</h6>
+          <div class="photo">
+            <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+          </div>
+          <div class="sosprof">
+            <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+            <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+            <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+          </div>
+          <h5>Khoirul Roziq</h5>
+          <p>Teknik Informatika</p>
+        </div>
 
 
-    <div class="profile" id="wabendum">
-      <h6>Wakil Bendahara Umum</h6>
-      <div class="photo">
-        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+        <div class="profile" id="wasekum">
+          <h6>Wakil Sekretaris Umum</h6>
+          <div class="photo">
+            <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+          </div>
+          <div class="sosprof">
+            <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+            <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+            <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+          </div>
+          <h5>Khoirul Roziq</h5>
+          <p>Teknik Informatika</p>
+        </div>
       </div>
-      <h5>Khoirul Roziq</h5>
-      <p>Teknik Informatika</p>
-      <div class="sosprof">
-        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
-        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
-        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
-      </div>
-    </div>
 
-    <div class="profile" id="sekum">
-      <h6>Sekretaris Umum</h6>
-      <div class="photo">
-        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
-      </div>
-      <h5>Khoirul Roziq</h5>
-      <p>Teknik Informatika</p>
-      <div class="sosprof">
-        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
-        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
-        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
-      </div>
-    </div>
+      <div class="container2">
+        <div class="profile" id="bendum">
+          <h6>Bendahara Umum</h6>
+          <div class="photo">
+            <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+          </div>
+          <div class="sosprof">
+            <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+            <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+            <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+          </div>
+          <h5>Khoirul Roziq</h5>
+          <p>Teknik Informatika</p>
+        </div>
 
 
-    <div class="profile" id="wasekum">
-      <h6>Wakil Sekretaris Umum</h6>
-      <div class="photo">
-        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+        <div class="profile" id="wabendum">
+          <h6>Wakil Bendahara Umum</h6>
+          <div class="photo">
+            <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+          </div>
+          <div class="sosprof">
+            <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+            <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+            <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+          </div>
+          <h5>Khoirul Roziq</h5>
+          <p>Teknik Informatika</p>
+        </div>
+
       </div>
-      <h5>Khoirul Roziq</h5>
-      <p>Teknik Informatika</p>
-      <div class="sosprof">
-        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
-        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
-        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
-      </div>
+
     </div>
 
-  </div>
+    <h4 class="text-center mt-3 mb-2">Kepala Departemen</h4>
 
-  <h4 class="text-center mb-5">Kepala Departemen</h4>
+    <div class="profile3">
+      <div class="profile" id="kd">
+        <h6>Kajian dan Dakwah</h6>
+        <div class="photo">
+          <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+        </div>
+        <div class="sosprof">
+          <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+          <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+          <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+        </div>
+        <h5>Khoirul Roziq</h5>
+        <p>Teknik Informatika</p>
+      </div>
 
-  <div class="profile3">
-    <div class="profile" id="kd">
-      <h6>Kajian dan Dakwah</h6>
-      <div class="photo">
-        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+      <div class="profile" id="kdr">
+        <h6>Kaderisasi</h6>
+        <div class="photo">
+          <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+        </div>
+        <div class="sosprof">
+          <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+          <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+          <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+        </div>
+        <h5>Khoirul Roziq</h5>
+        <p>Teknik Informatika</p>
       </div>
-      <h5>Khoirul Roziq</h5>
-      <p>Teknik Informatika</p>
-      <div class="sosprof">
-        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
-        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
-        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+
+      <div class="profile" id="kom">
+        <h6>Kominfo</h6>
+        <div class="photo">
+          <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+        </div>
+        <div class="sosprof">
+          <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+          <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+          <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+        </div>
+        <h5>Khoirul Roziq</h5>
+        <p>Teknik Informatika</p>
       </div>
+
+      <div class="profile" id="kwu">
+        <h6>Kewirausahaan</h6>
+        <div class="photo">
+          <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+        </div>
+        <div class="sosprof">
+          <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+          <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+          <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+        </div>
+        <h5>Khoirul Roziq</h5>
+        <p>Teknik Informatika</p>
+      </div>
+
+      <div class="profile" id="rpt">
+        <h6>Riset dan Pengembangan Teknologi</h6>
+        <div class="photo">
+          <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+        </div>
+        <div class="sosprof">
+          <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
+          <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
+          <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
+        </div>
+        <h5>Khoirul Roziq</h5>
+        <p>Teknik Informatika</p>
+      </div>
+
     </div>
-
-    <div class="profile" id="kdr">
-      <h6>Kaderisasi</h6>
-      <div class="photo">
-        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
-      </div>
-      <h5>Khoirul Roziq</h5>
-      <p>Teknik Informatika</p>
-      <div class="sosprof">
-        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
-        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
-        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
-      </div>
-    </div>
-
-    <div class="profile" id="rpt">
-      <h6>Riset dan Pengembangan Teknologi</h6>
-      <div class="photo">
-        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
-      </div>
-      <h5>Khoirul Roziq</h5>
-      <p>Teknik Informatika</p>
-      <div class="sosprof">
-        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
-        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
-        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
-      </div>
-    </div>
-
-    <div class="profile" id="kom">
-      <h6>Kominfo</h6>
-      <div class="photo">
-        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
-      </div>
-      <h5>Khoirul Roziq</h5>
-      <p>Teknik Informatika</p>
-      <div class="sosprof">
-        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
-        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
-        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
-      </div>
-    </div>
-
-    <div class="profile" id="kwu">
-      <h6>Kewirausahaan</h6>
-      <div class="photo">
-        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
-      </div>
-      <h5>Khoirul Roziq</h5>
-      <p>Teknik Informatika</p>
-      <div class="sosprof">
-        <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
-        <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
-        <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
-      </div>
-    </div>
-
   </div>
   <!-- end profile -->
   <!-- end main -->

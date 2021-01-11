@@ -10,6 +10,15 @@
             <h1 class="mt-3">Admin Keanggotaan</h1>
         </div>
     </div>
+
+    <a href="/members/create" class="btn btn-primary my-3">Tambah Data Anggota</a>
+
+    @if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+    @endif
+
     <table class="table">
         <thead class="table-dark">
             <tr>
@@ -30,7 +39,7 @@
                 <td>{{ $member->prodi }}</td>
                 <td>{{ $member->predikat }}</td>
                 <td>
-                    <a href="#"><span href="#" class="badge bg-primary">Detail</span></a>
+                    <a href="/members/{{ $member->id }}" class="badge bg-info">Detail</a>
                 </td>
             </tr>
             @endforeach

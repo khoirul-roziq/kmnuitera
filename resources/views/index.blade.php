@@ -75,6 +75,7 @@
       <button type="button" class="btn btn-secondary">Login sebagai tamu</button>
 
       <span>Lupa password? <a href="">Klik di sini!</a></span>
+
     </div>
 
     <div class="link-reg">
@@ -90,7 +91,7 @@
     <h3>Selamat Datang di Situs</h3>
     <h1>Keluarga Mahasiswa Nahdlatul Ulama</h1>
     <h1>Institut Teknologi Sumatera</h1>
-    <a href="{{ url('/blog') }}"><button type="button" class="btn btn-warning m-5">Jelajahi Blog</button></a>
+    <a href="{{ url('/blog') }}"><button type="button" class="btn btn-warning">Jelajahi Blog</button></a>
   </div>
   <!-- end jumbotron -->
 
@@ -129,12 +130,14 @@
   <!-- end carousel/ slider -->
 
   <!-- main -->
-  <h2 class="text-center pt-5 pb-1" id="jv">Ayo Gabung KMNU!</h2>
-  <hr>
-  <h6>Membangun generasi muda yang berkarakter dan mampu mengamalkan ajaran</h6>
-  <h6>Ahlussunnah Wal Jama'ah An-Nahdliyah</h6>
-  <div class="position-relative mt-5">
-    <a href="{{ url('/formreg') }}"><button type="button" class="btn btn-success position-absolute top-0 start-50 translate-middle">Daftar Anggota</button></a>
+  <div class="slogan">
+    <h2 class="text-center pt-5 pb-1" id="jv">Ayo Gabung KMNU!</h2>
+    <hr>
+    <h6>Membangun generasi muda yang berkarakter dan mampu mengamalkan ajaran</h6>
+    <h6>Ahlussunnah Wal Jama'ah An-Nahdliyah</h6>
+    <div class="position-relative mt-5">
+      <a href="{{ url('/formreg') }}"><button type="button" class="btn btn-success position-absolute top-0 start-50 translate-middle">Daftar Anggota</button></a>
+    </div>
   </div>
 
 

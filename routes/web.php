@@ -16,6 +16,12 @@ use App\Http\Controllers\MembersController;
 
 Route::get('/', [PanelController::class, 'index']);
 Route::get('/dashboard', [PanelController::class, 'dashboard']);
-Route::get('/members', [MembersController::class, 'index']);
 Route::get('/keuangan', [PanelController::class, 'keuangan']);
 Route::get('/formreg', [PanelController::class, 'formreg']);
+Route::get('/members', [MembersController::class, 'index']);
+Route::get('/members/create', [MembersController::class, 'create']);
+Route::post('/members', [MembersController::class, 'store']);
+Route::get('/members/{member}', [MembersController::class, 'show']);
+Route::delete('members/{member}', [MembersController::class, 'destroy']);
+Route::get('/members/{member}/edit', [MembersController::class, 'edit']);
+Route::patch('/members/{member}', [MembersController::class, 'update']);

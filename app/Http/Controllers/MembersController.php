@@ -15,7 +15,7 @@ class MembersController extends Controller
     public function index()
     {
         $members = Member::all();
-        return view('members', compact('members'));
+        return view('members.index', compact('members'));
     }
 
     /**
@@ -25,7 +25,7 @@ class MembersController extends Controller
      */
     public function create()
     {
-        //
+        return view('members.create');
     }
 
     /**
@@ -36,7 +36,14 @@ class MembersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'nia' => 'required|size:9',
+            'nim' => 'required|size:9'
+        ]);
+
+        Member::create($request->all());
+        return redirect('/members')->with('status', 'Data Anggota Berhasil Ditambahkan!');
     }
 
     /**
@@ -45,9 +52,9 @@ class MembersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Member $member)
     {
-        //
+        return view('members.show', compact('member'));
     }
 
     /**
@@ -56,9 +63,9 @@ class MembersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Member $member)
     {
-        //
+        return view('members.edit', compact('member'));
     }
 
     /**
@@ -68,9 +75,23 @@ class MembersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Member $member)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'nia' => 'required|size:9',
+            'nim' => 'required|size:9'
+        ]);
+
+        Member::where('id', $member->id)->update([
+            'predikat' => $request->predikat,
+            'nama' => $request->nama,
+            'nia' => $request->nia,
+            'nim' => $request->nim,
+            'prodi' => $request->prodi
+        ]);
+
+        return redirect('/members')->with('status', 'Data Anggota Berhasil Diubah!');
     }
 
     /**
@@ -79,8 +100,9 @@ class MembersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Member $member)
     {
-        //
+        Member::destroy($member->id);
+        return redirect('/members')->with('status', 'Data Anggota Berhasil Dihapus!');
     }
 }

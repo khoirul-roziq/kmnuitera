@@ -264,13 +264,22 @@ footer hr {
 
 /* end footer */
 
+/* containerReg */
+
+.containerReg {
+    width: 70%;
+}
+
+/* end containerReg */
+
 /* break point */
 
 /* tablet size */
 @media screen and (max-width: 768px) {
-    body {
-        background-color: rgb(240, 231, 215);
+    .containerReg {
+        width: 100%;
     }
+
     .login {
         position: fixed;
         width: 89%;
@@ -316,8 +325,8 @@ footer hr {
 
 /* handphone size */
 @media screen and (max-width: 576px) {
-    body {
-        background-color: rgb(240, 231, 215);
+    .containerReg {
+        width: 100%;
     }
 
     .login {

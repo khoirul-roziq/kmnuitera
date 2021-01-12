@@ -21,9 +21,4 @@ class PanelController extends Controller
     {
         return view('keuangan');
     }
-
-    public function formreg()
-    {
-        return view('formreg');
-    }
 }

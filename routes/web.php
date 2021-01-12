@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PanelController;
 use App\Http\Controllers\MembersController;
+use App\Http\Controllers\GuestController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,7 @@ use App\Http\Controllers\MembersController;
 Route::get('/', [PanelController::class, 'index']);
 Route::get('/dashboard', [PanelController::class, 'dashboard']);
 Route::get('/keuangan', [PanelController::class, 'keuangan']);
-Route::get('/formreg', [PanelController::class, 'formreg']);
+
 Route::get('/members', [MembersController::class, 'index']);
 Route::get('/members/create', [MembersController::class, 'create']);
 Route::post('/members', [MembersController::class, 'store']);
@@ -25,3 +26,6 @@ Route::get('/members/{member}', [MembersController::class, 'show']);
 Route::delete('members/{member}', [MembersController::class, 'destroy']);
 Route::get('/members/{member}/edit', [MembersController::class, 'edit']);
 Route::patch('/members/{member}', [MembersController::class, 'update']);
+
+// Route::get('/formreg', [PanelController::class, 'formreg']);
+Route::get('/formreg', [GuestController::class, 'create']);

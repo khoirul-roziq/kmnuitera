@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Guest;
 
-class GuestController extends Controller
+class GuestsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,14 @@ class GuestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'nia' => 'required|size:9',
+            'nim' => 'required|size:9'
+        ]);
+
+        Guest::create($request->all());
+        return redirect('/formreg')->with('status', 'Data Anggota Berhasil Ditambahkan!');
     }
 
     /**

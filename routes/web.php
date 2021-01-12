@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PanelController;
 use App\Http\Controllers\MembersController;
-use App\Http\Controllers\GuestController;
+use App\Http\Controllers\GuestsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,5 +27,5 @@ Route::delete('members/{member}', [MembersController::class, 'destroy']);
 Route::get('/members/{member}/edit', [MembersController::class, 'edit']);
 Route::patch('/members/{member}', [MembersController::class, 'update']);
 
-// Route::get('/formreg', [PanelController::class, 'formreg']);
-Route::get('/formreg', [GuestController::class, 'create']);
+Route::get('/formreg', [GuestsController::class, 'create']);
+Route::post('/formreg', [GuestsController::class, 'store']);

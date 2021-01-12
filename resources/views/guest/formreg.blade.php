@@ -11,7 +11,8 @@
         </div>
     </div>
 
-    <form action="" class="containerReg">
+    <form action="/formreg" class="containerReg" method="post">
+        @csrf
         <div class="mb-3">
             <label for="nama" class="form-label">Nama Lengkap</label>
             <input type="text" class="form-control" id="nama" name="nama">
@@ -34,7 +35,7 @@
         </div>
         <div class=" mb-3">
             <label for="email" class="form-label">E-mail</label>
-            <input type="text" class="form-control" id="email" name="email">
+            <input type="email" class="form-control" id="email" name="email">
             <span class="form-text">Masukan E-mail yang masih aktif</span>
         </div>
         <div class="mb-3">

@@ -9,6 +9,9 @@
     <link rel="stylesheet" type="text/css" href="{{ url('/assets/css/lightslider.css')}}">
     <link rel="stylesheet" href="{{ url('/assets/css/styleIndex.css')}}">
 
+    <link rel="shortcut icon" href="assets/img/logo/logo.png" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon"> -->
+
     <script type="text/javascript" src="{{ url('/assets/js/JQuery3.3.1.js')}}"></script>
     <script type="text/javascript" src="{{ url('/assets/js/lightslider.js')}}"></script>
 
@@ -20,7 +23,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ url('/')}}">
                 <img src="{{ url('/assets/img/logo/brand.png')}}" alt="" height="40">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

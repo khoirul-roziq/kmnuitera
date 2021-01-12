@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{{ url('/assets/css/styleIndex.css')}}">
 
     <link rel="shortcut icon" href="assets/img/logo/logo.png" type="image/x-icon">
-    <!-- <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon"> -->
 
     <script type="text/javascript" src="{{ url('/assets/js/JQuery3.3.1.js')}}"></script>
     <script type="text/javascript" src="{{ url('/assets/js/lightslider.js')}}"></script>

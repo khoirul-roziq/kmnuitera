@@ -24,7 +24,7 @@ class GuestsController extends Controller
      */
     public function create()
     {
-        return view('guest.formreg', ['titlePage' => 'Form Pendaftaran Anggota']);
+        return view('guests.formreg', ['titlePage' => 'Form Pendaftaran Anggota']);
     }
 
     /**
@@ -36,13 +36,16 @@ class GuestsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required',
-            'nia' => 'required|size:9',
-            'nim' => 'required|size:9'
+            'nama' => 'required|max:100',
+            'nim' => 'required|size:9',
+            'prodi' => 'required|max:50',
+            'angkatan' => 'required',
+            'email' => 'required|max:50|email:rfc,dns',
+            'wa' => 'required|max:20'
         ]);
 
         Guest::create($request->all());
-        return redirect('/formreg')->with('status', 'Data Anggota Berhasil Ditambahkan!');
+        return redirect('/formreg')->with('status', 'Anda Berhasil Melakukan Registrasi!');
     }
 
     /**

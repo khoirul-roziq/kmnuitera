@@ -29,3 +29,8 @@ Route::patch('/members/{member}', [MembersController::class, 'update']);
 
 Route::get('/formreg', [GuestsController::class, 'create']);
 Route::post('/formreg', [GuestsController::class, 'store']);
+Route::get('/guests', [GuestsController::class, 'index']);
+Route::get('/guests/{guest}', [GuestsController::class, 'show']);
+Route::delete('guests/{guest}', [GuestsController::class, 'destroy']);
+Route::get('/guests/{guest}/edit', [GuestsController::class, 'edit']);
+Route::patch('/guests/{guest}', [GuestsController::class, 'update']);

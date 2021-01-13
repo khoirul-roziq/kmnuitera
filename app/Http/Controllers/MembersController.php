@@ -39,7 +39,20 @@ class MembersController extends Controller
         $request->validate([
             'nama' => 'required',
             'nia' => 'required|size:9',
-            'nim' => 'required|size:9'
+            'nim' => 'required|size:9',
+            'prodi' => 'required',
+            'angkatan' => 'required',
+            'predikat' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'alamat_asal' => 'required',
+            'alamat_sekarang' => 'required',
+            'email' => 'required',
+            'nomor_seluler' => 'required',
+            'wa' => 'required',
+            'id_line' => 'required',
+            'ig' => 'required',
+            'fb' => 'required'
         ]);
 
         Member::create($request->all());

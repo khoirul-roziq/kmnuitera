@@ -43,8 +43,8 @@
     <!-- end navbar -->
     <!-- login -->
     <div class="bg-transparan display-none">
-        <div class="login">
-
+        <form class="login">
+            @csrf
             <div class="close">
                 <input type="checkbox">
                 <span></span>
@@ -77,7 +77,7 @@
 
             <span>Lupa password? <a href="">Klik di sini!</a></span>
 
-        </div>
+        </form>
 
         <div class="link-reg">
             <h5>Apakah kamu pertama kali mengunjungi situs ini?</h5>

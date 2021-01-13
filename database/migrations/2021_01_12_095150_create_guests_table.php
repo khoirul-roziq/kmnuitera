@@ -15,6 +15,8 @@ class CreateGuestsTable extends Migration
     {
         Schema::create('guests', function (Blueprint $table) {
             $table->id();
+            $table->string('role_user', 50);
+            $table->string('predikat', 50);
             $table->string('nama', 100);
             $table->char('nim', 9)->unique();
             $table->string('prodi', 50);

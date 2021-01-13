@@ -1,0 +1,60 @@
+form,
+.card {
+    width: 80%;
+}
+
+.card input {
+    color: rgb(131, 33, 33);
+}
+
+/* footer */
+
+footer {
+    background-color: #122620;
+    height: 250px;
+    padding-top: 50px;
+    color: whitesmoke;
+}
+
+footer img {
+    display: block;
+    margin: auto;
+}
+
+footer hr {
+    width: 200px;
+    border-top: 3px solid whitesmoke;
+    margin: 10px auto 10px;
+}
+
+/* end footer */
+
+/* break point */
+
+/* tablet size */
+@media screen and (max-width: 768px) {
+    form,
+    .card {
+        width: 100%;
+    }
+    footer p {
+        font-size: 13px;
+    }
+}
+
+/* handphone size */
+@media screen and (max-width: 576px) {
+    form,
+    .card {
+        width: 100%;
+    }
+    footer hr {
+        border-top: 2px solid whitesmoke;
+    }
+
+    footer p {
+        font-size: 13px;
+    }
+}
+
+/* end break point */

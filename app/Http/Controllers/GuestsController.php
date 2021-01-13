@@ -14,7 +14,8 @@ class GuestsController extends Controller
      */
     public function index()
     {
-        //
+        $guests = Guest::all();
+        return view('guests.index', compact('guests'));
     }
 
     /**
@@ -39,7 +40,7 @@ class GuestsController extends Controller
             'nama' => 'required|max:100',
             'nim' => 'required|size:9',
             'prodi' => 'required|max:50',
-            'angkatan' => 'required',
+            'angkatan' => 'required|size:4',
             'email' => 'required|max:50|email:rfc,dns',
             'wa' => 'required|max:20'
         ]);
@@ -54,9 +55,9 @@ class GuestsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Guest $guest)
     {
-        //
+        return view('guests.show', compact('guest'));
     }
 
     /**
@@ -65,9 +66,9 @@ class GuestsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Guest $guest)
     {
-        //
+        return view('guests.edit', compact('guest'));
     }
 
     /**
@@ -77,9 +78,27 @@ class GuestsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Guest $guest)
     {
-        //
+        $request->validate([
+            'nama' => 'required|max:100',
+            'nim' => 'required|size:9',
+            'prodi' => 'required|max:50',
+            'angkatan' => 'required|size:4',
+            'email' => 'required|max:50|email:rfc,dns',
+            'wa' => 'required|max:20'
+        ]);
+
+        Guest::where('id', $guest->id)->update([
+            'nama' => $request->nama,
+            'nim' => $request->nim,
+            'prodi' => $request->prodi,
+            'angkatan' => $request->angkatan,
+            'email' => $request->email,
+            'wa' => $request->wa,
+
+        ]);
+        return redirect('/guests')->with('status', 'Data Pendaftar Berhasil Diubah!');
     }
 
     /**
@@ -88,8 +107,9 @@ class GuestsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Guest $guest)
     {
-        //
+        Guest::destroy($guest->id);
+        return redirect('/guests')->with('status', 'Data Pendaftar Berhasil Dihapus!');
     }
 }

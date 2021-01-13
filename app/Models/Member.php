@@ -12,6 +12,7 @@ class Member extends Model
     use SoftDeletes;
     protected $guarded = ['id', 'created_at', 'updated_at'];
     protected $attributes = [
-        'predikat' => 'Anggota'
+        'predikat' => 'Anggota',
+        'role_user' => 'Member'
     ];
 }

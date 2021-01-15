@@ -40,7 +40,7 @@
     @yield('container')
 
     <!-- footer -->
-    <footer class="mt-5">
+    <footer>
         <img src="{{ url('assets/img/logo/logo.png') }}" alt="logo" height="60">
         <h6 class="pt-2 text-center">KMNU ITERA</h6>
         <hr>

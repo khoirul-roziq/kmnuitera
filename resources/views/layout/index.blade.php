@@ -34,58 +34,14 @@
                         <a class="nav-link active reg" aria-current="page" href="{{ url('/formreg')}}">Daftar Anggota</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active masuk" href="#">Login</a>
+                        <a class="nav-link active masuk" href="/login">Login</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- end navbar -->
-    <!-- login -->
-    <div class="bg-transparan display-none">
-        <form class="login">
-            @csrf
-            <div class="close">
-                <input type="checkbox">
-                <span></span>
-                <span></span>
-            </div>
 
-            <h3 class="text-center">Login</h3>
-
-            <div class="mb-3">
-                <label for="email" class="form-label">Email/ Username</label>
-                <input type="text" class="form-control" id="email" placeholder="Masukan Email atau Username">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Masukan Password">
-            </div>
-
-            <div class="captcha mb-3">
-                <label for="captcha" class="form-label">Berapa hasil dari 4 + 7 ?</label>
-                <input type="text" class="form-control" id="captcha" placeholder="Hasil">
-            </div>
-
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                <label class="form-check-label" for="flexSwitchCheckDefault">Ingat saya!</label>
-            </div>
-
-            <button type="button" class="btn btn-success">Login</button>
-            <button type="button" class="btn btn-secondary">Login sebagai tamu</button>
-
-            <span>Lupa password? <a href="">Klik di sini!</a></span>
-
-        </form>
-
-        <div class="link-reg">
-            <h5>Apakah kamu pertama kali mengunjungi situs ini?</h5>
-            <p>Untuk mendapatkan akses penuh, silahkan daftar anggota terlebih dahulu!</p>
-            <a href="{{ url('/formreg')}}"><button type="button" class="btn btn-primary btn-create">Daftar Anggota</button></a>
-        </div>
-    </div>
-    <!-- end login -->
     <!-- container -->
 
     @yield('container')

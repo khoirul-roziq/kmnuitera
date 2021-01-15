@@ -32,8 +32,9 @@
         </thead>
         <tbody>
             @foreach( $members as $member )
+            @if( $member->id != false)
             <tr>
-                <td scope="row">{{ $loop->iteration }}</td>
+                <td scope="row">{{ $loop->iteration - 1 }}</td>
                 <td>{{ $member->nama }}</td>
                 <td>{{ $member->nia }}</td>
                 <td>{{ $member->prodi }}</td>
@@ -42,6 +43,7 @@
                     <a href="/members/{{ $member->id }}" class="badge bg-info">Detail</a>
                 </td>
             </tr>
+            @endif
             @endforeach
         </tbody>
     </table>

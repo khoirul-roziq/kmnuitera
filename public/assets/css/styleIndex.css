@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(247, 247, 247);
+}
+
 /* navbar */
 .navbar {
     position: fixed;
@@ -269,6 +273,9 @@ footer hr {
 .containerReg {
     width: 70%;
 }
+.containerLog {
+    width: 50%;
+}
 
 /* end containerReg */
 
@@ -276,7 +283,8 @@ footer hr {
 
 /* tablet size */
 @media screen and (max-width: 768px) {
-    .containerReg {
+    .containerReg,
+    .containerLog {
         width: 100%;
     }
 
@@ -325,7 +333,8 @@ footer hr {
 
 /* handphone size */
 @media screen and (max-width: 576px) {
-    .containerReg {
+    .containerReg,
+    .containerLog {
         width: 100%;
     }
 

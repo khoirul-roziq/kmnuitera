@@ -38,6 +38,18 @@
                 </div>
             </div>
             <div class="mb-3 row">
+                <label for="statictahun_kader" class="col-sm-3 col-form-label">Tahun Kader</label>
+                <div class="col-sm-9">
+                    <input type="text" readonly class="form-control-plaintext" id="statictahun_kader" value="{{ $member->tahun_kader }}">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="statictahun_angkatan" class="col-sm-3 col-form-label">Angkatan</label>
+                <div class="col-sm-9">
+                    <input type="text" readonly class="form-control-plaintext" id="statictahun_angkatan" value="{{ $member->angkatan }}">
+                </div>
+            </div>
+            <div class="mb-3 row">
                 <label for="staticTempatLahir" class="col-sm-3 col-form-label">Tempat Lahir</label>
                 <div class="col-sm-9">
                     <input type="text" readonly class="form-control-plaintext" id="staticTempatLahir" value="{{ $member->tempat_lahir }}">

@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use App\Models\Member;
 
 class MembersController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -39,8 +42,10 @@ class MembersController extends Controller
         $request->validate([
             'nama' => 'required',
             'nia' => 'required|size:9',
+            'password' => 'required|min:6',
             'nim' => 'required|size:9',
             'prodi' => 'required',
+            'tahun_kader' => 'required',
             'angkatan' => 'required',
             'predikat' => 'required',
             'tempat_lahir' => 'required',
@@ -55,8 +60,61 @@ class MembersController extends Controller
             'fb' => 'required'
         ]);
 
-        Member::create($request->all());
-        return redirect('/members')->with('status', 'Data Anggota Berhasil Ditambahkan!');
+
+        $member = new Member;
+
+        $member->nama = $request->nama;
+        $member->nia = $request->nia;
+        $member->password = Hash::make($request->password);
+        $member->nim = $request->nim;
+        $member->prodi = $request->prodi;
+        $member->tahun_kader = $request->tahun_kader;
+        $member->angkatan = $request->angkatan;
+        $member->predikat = $request->predikat;
+        $member->tempat_lahir = $request->tempat_lahir;
+        $member->tanggal_lahir = $request->tanggal_lahir;
+        $member->alamat_asal = $request->alamat_asal;
+        $member->alamat_sekarang = $request->alamat_sekarang;
+        $member->email = $request->email;
+        $member->nomor_seluler = $request->nomor_seluler;
+        $member->wa = $request->wa;
+        $member->id_line = $request->id_line;
+        $member->ig = $request->ig;
+        $member->fb = $request->fb;
+
+        $query = $member->save();
+
+        // $query = DB::table('members')
+        //     ->insert([
+        //         'nama' => $request->nama,
+        //         'nia' => $request->nia,
+        //         'password' => Hash::make($request->password),
+        //         'nim' => $request->nim,
+        //         'prodi' => $request->prodi,
+        //         'tahun_kader' => $request->tahun_kader,
+        //         'angkatan' => $request->angkatan,
+        //         'predikat' => $request->predikat,
+        //         'tempat_lahir' => $request->tempat_lahir,
+        //         'tanggal_lahir' => $request->tanggal_lahir,
+        //         'alamat_asal' => $request->alamat_asal,
+        //         'alamat_sekarang' => $request->alamat_sekarang,
+        //         'email' => $request->email,
+        //         'nomor_seluler' => $request->nomor_seluler,
+        //         'wa' => $request->wa,
+        //         'id_line' => $request->id_line,
+        //         'ig' => $request->ig,
+        //         'fb' => $request->fb
+        //     ]);
+
+        if ($query) {
+            return back()->with('success', 'Data Anggota Berhasil Ditambahkan!');
+        } else {
+            return back()->with('fail', 'Data Anggota Gagal Ditambahkan!');
+        }
+
+
+        // Member::create($request->all());
+        // return redirect('/members')->with('status', 'Data Anggota Berhasil Ditambahkan!');
     }
 
     /**
@@ -117,5 +175,56 @@ class MembersController extends Controller
     {
         Member::destroy($member->id);
         return redirect('/members')->with('status', 'Data Anggota Berhasil Dihapus!');
+    }
+
+    function login()
+    {
+        return view('/members/login');
+    }
+
+    function check(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email:rfc,dns',
+            'password' => 'required|min:6',
+        ]);
+
+        // $member = Member::where('email', '=', $request->email)->first();
+        $member = DB::table('members')
+            ->where('email', $request->email)
+            ->first();
+
+        if ($member) {
+            if (Hash::check($request->password, $member->password)) {
+                $request->session()->put('LoggedMember', $member->id);
+                return redirect('dashboard');
+            } else {
+                return back()->with('fail', 'Password Salah');
+            }
+        } else {
+            return back()->with('fail', 'Tidak ada akun yang cocok dengan email ini');
+        }
+    }
+
+    public function dashboard()
+    {
+        if (session()->has('LoggedMember')) {
+            // $member = Member::where('id', '=', session('LoggedMember'))->first();
+            $member = DB::table('members')
+                ->where('id', session('LoggedMember'))
+                ->first();
+            $data = [
+                'LoggedMemberInfo' => $member
+            ];
+        }
+        return view('dashboard', $data);
+    }
+
+    function logout()
+    {
+        if (session()->has('LoggedMember')) {
+            session()->pull('LoggedMember');
+            return redirect('login');
+        }
     }
 }

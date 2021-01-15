@@ -16,10 +16,12 @@ class CreateMembersTable extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->id();
             $table->string('role_user', 50);
+            $table->string('password');
             $table->char('nia', 9)->unique();
             $table->char('nim', 9)->unique();
             $table->string('nama', 100);
             $table->string('prodi', 50);
+            $table->char('tahun_kader', 4);
             $table->char('angkatan', 4);
             $table->string('predikat', 50);
             $table->string('tempat_lahir', 50);

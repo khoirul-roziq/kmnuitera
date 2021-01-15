@@ -10,9 +10,20 @@
             <h1 class="mt-3">Form Tambah Anggota</h1>
         </div>
     </div>
-
+    
     <form method="post" action="/members">
         @csrf
+
+        @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+        @endif
+        @if (session('fail'))
+        <div class="alert alert-danger">
+            {{ session('fail') }}
+        </div>
+        @endif
 
         <div class="mb-3 row">
             <label for="predikat" class="col-sm-2 col-form-label">Predikat</label>
@@ -49,6 +60,17 @@
             </div>
         </div>
         <div class="mb-3 row">
+            <label for="password" class="col-sm-2 col-form-label">password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" value="{{ old('password') }}">
+                <div class="invalid-feedback">
+                    @error('password')
+                    {{ $message }}
+                    @enderror
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 row">
             <label for="nim" class="col-sm-2 col-form-label">NIM</label>
             <div class="col-sm-10">
                 <input type="nim" class="form-control @error('nim') is-invalid @enderror" id="nim" name="nim" value="{{ old('nim') }}">
@@ -65,6 +87,17 @@
                 <input type="Prodi" class="form-control @error('prodi') is-invalid @enderror" id="prodi" name="prodi" value="{{ old('prodi') }}">
                 <div class="invalid-feedback">
                     @error('prodi')
+                    {{ $message }}
+                    @enderror
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="tahun_kader" class="col-sm-2 col-form-label">Tahun Kader</label>
+            <div class="col-sm-10">
+                <input type="tahun_kader" class="form-control @error('tahun_kader') is-invalid @enderror" id="tahun_kader" name="tahun_kader" value="{{ old('tahun_kader') }}">
+                <div class="invalid-feedback">
+                    @error('tahun_kader')
                     {{ $message }}
                     @enderror
                 </div>

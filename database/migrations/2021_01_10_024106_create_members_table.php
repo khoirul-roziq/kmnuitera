@@ -34,6 +34,7 @@ class CreateMembersTable extends Migration
             $table->string('id_line');
             $table->string('ig');
             $table->string('fb');
+            $table->string('avatar');
             $table->timestamps();
         });
     }

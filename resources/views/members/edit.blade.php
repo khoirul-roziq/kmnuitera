@@ -11,10 +11,31 @@
         </div>
     </div>
 
-    <form method="post" action="/members/{{ $member->id}}">
+    <form method="post" action="/members/{{ $member->id}}" enctype="multipart/form-data">
         @method('patch')
         @csrf
 
+        @if (session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+        @endif
+
+        <div class="data my-2">
+            <div class="avatar" style="width: fit-content;">
+                <img src="/storage/{{ $member->avatar }}" alt="" width="280" class="p-2">
+                <div class="mb-3">
+                    <input type="file" class="form-control @error('avatar') is-invalid @enderror" id="avatar" name="avatar">
+                    <span class="form-text">Update Foto Diri</span>
+                    <div class="invalid-feedback">
+                        @error('avatar')
+                        {{ $message }}
+                        @enderror
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="mb-3 row">
             <label for="predikat" class="col-sm-2 col-form-label">Predikat</label>
             <div class="col-sm-10">
@@ -60,6 +81,7 @@
                 </div>
             </div>
         </div>
+
         <div class="mb-3 row">
             <label for="prodi" class="col-sm-2 col-form-label">Program Studi</label>
             <div class="col-sm-10">
@@ -72,7 +94,18 @@
             </div>
         </div>
         <div class="mb-3 row">
-            <label for="angkatan" class="col-sm-2 col-form-label">Angkatan</label>
+            <label for="tahun_kader" class="col-sm-2 col-form-label">Tahun Kader</label>
+            <div class="col-sm-10">
+                <input type="tahun_kader" class="form-control @error('tahun_kader') is-invalid @enderror" id="tahun_kader" name="tahun_kader" value="{{ $member->tahun_kader }}">
+                <div class="invalid-feedback">
+                    @error('tahun_kader')
+                    {{ $message }}
+                    @enderror
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="angkatan" class="col-sm-2 col-form-label">Tahun Angkatan</label>
             <div class="col-sm-10">
                 <input type="angkatan" class="form-control @error('angkatan') is-invalid @enderror" id="angkatan" name="angkatan" value="{{ $member->angkatan }}">
                 <div class="invalid-feedback">

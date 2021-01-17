@@ -23,6 +23,7 @@ class CreateGuestsTable extends Migration
             $table->char('angkatan', 4);
             $table->string('email', 50);
             $table->string('wa', 20);
+            $table->string('avatar', 200);
             $table->timestamps();
         });
     }

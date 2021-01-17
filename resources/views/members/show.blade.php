@@ -12,6 +12,9 @@
     </div>
     <div class="card">
         <div class="card-body">
+            <div class="avatar mb-5" style="border: 4px solid rgb(100, 84, 84); width: fit-content;">
+                <img src="/storage/{{ $member->avatar }}" alt="" width="280" class="p-2">
+            </div>
             <div class="mb-3 row">
                 <label for="staticNama" class="col-sm-3 col-form-label">Nama Lengkap</label>
                 <div class="col-sm-9">

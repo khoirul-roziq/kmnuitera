@@ -10,12 +10,17 @@
             <h1 class="my-3">{{$titlePage}}</h1>
         </div>
     </div>
-    @if (session('status'))
+    @if (session('success'))
     <div class="alert alert-success">
-        {{ session('status') }}
+        {{ session('success') }}
     </div>
     @endif
-    <form action="/formreg" class="containerReg" method="post">
+    @if (session('fail'))
+    <div class="alert alert-danger">
+        {{ session('fail') }}
+    </div>
+    @endif
+    <form action="/formreg" class="containerReg" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="nama" class="form-label">Nama Lengkap</label>
@@ -73,6 +78,16 @@
             <span class="form-text">Masukan Nomor Whatsapp yang masih aktif</span>
             <div class="invalid-feedback">
                 @error('wa')
+                {{ $message }}
+                @enderror
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="avatar" class="form-label">Upload Foto Diri</label>
+            <input type="file" class="form-control @error('avatar') is-invalid @enderror" id="avatar" name="avatar" value="{{ old('avatar') }}" autocomplete="off">
+            <span class="form-text">Pastikan foto yang anda upload terlihat wajahnya</span>
+            <div class="invalid-feedback">
+                @error('avatar')
                 {{ $message }}
                 @enderror
             </div>

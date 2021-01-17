@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(247, 247, 247);
+}
+
 form,
 .card {
     width: 80%;
@@ -6,6 +10,12 @@ form,
 .card input {
     color: rgb(131, 33, 33);
 }
+
+/* .avatar {
+    border: 4px solid rgb(100, 84, 84);
+    width: fit-content;
+} */
+
 
 /* footer */
 

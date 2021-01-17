@@ -11,7 +11,7 @@
         </div>
     </div>
     
-    <form method="post" action="/members">
+    <form method="post" action="/members" enctype="multipart/form-data">
         @csrf
 
         @if (session('success'))
@@ -224,7 +224,18 @@
                 </div>
             </div>
         </div>
-
+        <div class="mb-3 row">
+            <label for="avatar" class="col-sm-2 col-form-label">Upload Foto Diri</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control @error('avatar') is-invalid @enderror" id="avatar" name="avatar">
+                <span class="form-text">Pastikan foto yang anda upload terlihat wajahnya</span>
+                <div class="invalid-feedback">
+                    @error('avatar')
+                    {{ $message }}
+                    @enderror
+                </div>
+            </div>
+        </div>
         <button type="submit" class="btn btn-primary mt-3">Tambah Data!</button>
     </form>
 

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\DB;
 use App\Models\Member;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+
 
 class MembersController extends Controller
 {
@@ -52,12 +54,13 @@ class MembersController extends Controller
             'tanggal_lahir' => 'required',
             'alamat_asal' => 'required',
             'alamat_sekarang' => 'required',
-            'email' => 'required',
+            'email' => 'required|max:50',
             'nomor_seluler' => 'required',
             'wa' => 'required',
             'id_line' => 'required',
             'ig' => 'required',
-            'fb' => 'required'
+            'fb' => 'required',
+            'avatar' => 'required|max:1024'
         ]);
 
 
@@ -81,6 +84,7 @@ class MembersController extends Controller
         $member->id_line = $request->id_line;
         $member->ig = $request->ig;
         $member->fb = $request->fb;
+        $member->avatar = $request->file('avatar')->store('members/avatars');
 
         $query = $member->save();
 
@@ -149,17 +153,53 @@ class MembersController extends Controller
     public function update(Request $request, Member $member)
     {
         $request->validate([
-            'nama' => 'required',
+            'nama' => 'required|max:100',
             'nia' => 'required|size:9',
-            'nim' => 'required|size:9'
+            // 'password' => 'required|min:6',
+            'nim' => 'required|size:9',
+            'prodi' => 'required',
+            'tahun_kader' => 'required',
+            'angkatan' => 'required',
+            'predikat' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'alamat_asal' => 'required',
+            'alamat_sekarang' => 'required',
+            'email' => 'required|max:50',
+            'nomor_seluler' => 'required',
+            'wa' => 'required|max:20',
+            'id_line' => 'required',
+            'ig' => 'required',
+            'fb' => 'required',
+            'avatar' => 'max:1024'
         ]);
+
+        if($request->avatar) {
+            $nameAvatar = DB::table('members')->where('id', $member->id)->first();
+            Storage::delete($nameAvatar->avatar);
+            Member::where('id', $member->id)->update([
+                'avatar' => $request->file('avatar')->store('members/avatars')
+            ]);
+        }       
 
         Member::where('id', $member->id)->update([
             'predikat' => $request->predikat,
             'nama' => $request->nama,
             'nia' => $request->nia,
             'nim' => $request->nim,
-            'prodi' => $request->prodi
+            'prodi' => $request->prodi,
+            'tahun_kader' => $request->tahun_kader,
+            'angkatan' => $request->angkatan,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'alamat_asal' => $request->alamat_asal,
+            'alamat_sekarang' => $request->alamat_sekarang,
+            'email' => $request->email,
+            'nomor_seluler' => $request->nomor_seluler,
+            'wa' => $request->wa,
+            'id_line' => $request->id_line,
+            'ig' => $request->ig,
+            'fb' => $request->fb
         ]);
 
         return redirect('/members')->with('status', 'Data Anggota Berhasil Diubah!');
@@ -217,7 +257,7 @@ class MembersController extends Controller
                 'LoggedMemberInfo' => $member
             ];
         }
-        return view('dashboard', $data);
+        return view('members.dashboard', $data);
     }
 
     function logout()

@@ -22,7 +22,7 @@
 
     <div class=" mb-3">
       <label for="email" class="form-label">E-mail</label>
-      <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}">
+      <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}">
       <span class="form-text">Masukan E-mail </span>
       <div class="invalid-feedback">
         @error('email')

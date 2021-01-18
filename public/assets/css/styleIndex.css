@@ -322,6 +322,15 @@ footer hr {
         width: 30%;
     }
 
+    .profile h5 {
+        font-size: medium;
+    }
+
+    .profile p {
+        font-size: smaller;
+        line-height: 15px;
+    }
+
     .profile2 .profile {
         width: 60%;
     }

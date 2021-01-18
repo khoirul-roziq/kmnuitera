@@ -71,7 +71,7 @@
     <div class="profile" id="ketum">
       <h6>Ketua Umum</h6>
       <div class="photo">
-        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+        <img src="{{ url('assets/img/profiles/ketum.jpg') }}" alt="Foto Profil">
       </div>
 
       <div class="sosprof">
@@ -95,8 +95,8 @@
         <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
         <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
       </div>
-      <h5>Khoirul Roziq</h5>
-      <p>Teknik Informatika</p>
+      <h5>Arjun Purwoko</h5>
+      <p>Teknik Geologi</p>
 
     </div>
   </div>
@@ -106,30 +106,30 @@
       <div class="profile" id="sekum">
         <h6>Sekretaris Umum</h6>
         <div class="photo">
-          <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+          <img src="{{ url('assets/img/profiles/sekum.jpeg') }}" alt="Foto Profil">
         </div>
         <div class="sosprof">
           <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
           <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
           <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
         </div>
-        <h5>Khoirul Roziq</h5>
-        <p>Teknik Informatika</p>
+        <h5>Rika Agustin</h5>
+        <p>Matematika</p>
       </div>
 
 
       <div class="profile" id="wasekum">
         <h6>Wakil Sekretaris Umum</h6>
         <div class="photo">
-          <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+          <img src="{{ url('assets/img/profiles/wasekum.jpeg') }}" alt="Foto Profil">
         </div>
         <div class="sosprof">
           <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
           <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
           <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
         </div>
-        <h5>Khoirul Roziq</h5>
-        <p>Teknik Informatika</p>
+        <h5>Anisa Ul Habiba</h5>
+        <p>Teknologi Industri Pertanian</p>
       </div>
     </div>
 
@@ -137,30 +137,30 @@
       <div class="profile" id="bendum">
         <h6>Bendahara Umum</h6>
         <div class="photo">
-          <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+          <img src="{{ url('assets/img/profiles/bendum.jpg') }}" alt="Foto Profil">
         </div>
         <div class="sosprof">
           <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
           <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
           <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
         </div>
-        <h5>Khoirul Roziq</h5>
-        <p>Teknik Informatika</p>
+        <h5>Juli Mulyanto</h5>
+        <p>Matematika</p>
       </div>
 
 
       <div class="profile" id="wabendum">
         <h6>Wakil Bendahara Umum</h6>
         <div class="photo">
-          <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+          <img src="{{ url('assets/img/profiles/wabendum.jpg') }}" alt="Foto Profil">
         </div>
         <div class="sosprof">
           <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
           <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
           <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
         </div>
-        <h5>Khoirul Roziq</h5>
-        <p>Teknik Informatika</p>
+        <h5>Celvin Sahroni</h5>
+        <p>Teknik Sipil</p>
       </div>
 
     </div>
@@ -173,15 +173,15 @@
     <div class="profile" id="kd">
       <h6>Kajian dan Dakwah</h6>
       <div class="photo">
-        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+        <img src="{{ url('assets/img/profiles/kd.jpeg') }}" alt="Foto Profil">
       </div>
       <div class="sosprof">
         <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
         <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
         <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
       </div>
-      <h5>Khoirul Roziq</h5>
-      <p>Teknik Informatika</p>
+      <h5>Khoirul Anam</h5>
+      <p>Matematika</p>
     </div>
 
     <div class="profile" id="kdr">
@@ -194,8 +194,8 @@
         <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
         <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
       </div>
-      <h5>Khoirul Roziq</h5>
-      <p>Teknik Informatika</p>
+      <h5>Bagus Wira Kumar</h5>
+      <p>Kimia</p>
     </div>
 
     <div class="profile" id="kom">
@@ -208,8 +208,8 @@
         <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
         <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
       </div>
-      <h5>Khoirul Roziq</h5>
-      <p>Teknik Informatika</p>
+      <h5>Solichul Anwari</h5>
+      <p>Fisika</p>
     </div>
 
     <div class="profile" id="kwu">
@@ -222,21 +222,21 @@
         <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
         <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
       </div>
-      <h5>Khoirul Roziq</h5>
-      <p>Teknik Informatika</p>
+      <h5>Nanang Rehan Maulana</h5>
+      <p>Teknologi Industri Pertanian</p>
     </div>
 
     <div class="profile" id="rpt">
       <h6>Riset dan Pengembangan Teknologi</h6>
       <div class="photo">
-        <img src="{{ url('assets/img/profiles/avatar.png') }}" alt="Foto Profil">
+        <img src="{{ url('assets/img/profiles/rpt.jpg') }}" alt="Foto Profil">
       </div>
       <div class="sosprof">
         <img src="{{ url('/assets/img/icons/instagram.png') }}" alt="ig" width="30">
         <img src="{{ url('/assets/img/icons/facebook.png') }}" alt="fb" width="30">
         <img src="{{ url('/assets/img/icons/line.png') }}" alt="line" width="30">
       </div>
-      <h5>Khoirul Roziq</h5>
+      <h5>Dwiki Agus Saputra</h5>
       <p>Teknik Informatika</p>
     </div>
 

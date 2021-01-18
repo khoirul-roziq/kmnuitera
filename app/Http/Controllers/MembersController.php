@@ -225,7 +225,7 @@ class MembersController extends Controller
     function check(Request $request)
     {
         $request->validate([
-            'email' => 'required|email:rfc,dns',
+            'email' => 'required',
             'password' => 'required|min:6',
         ]);
 
@@ -257,7 +257,69 @@ class MembersController extends Controller
                 'LoggedMemberInfo' => $member
             ];
         }
-        return view('members.dashboard', $data);
+        return view('members.dashboard', compact('member'));
+    }
+
+    public function editprofile() {
+        $member = DB::table('members')
+                ->where('id', session('LoggedMember'))
+                ->first();
+        return view('members.editprofile', compact('member'));
+    }
+
+    public function updateprofile(Request $request, Member $member)
+    {
+        $request->validate([
+            'nama' => 'required|max:100',
+            'nia' => 'required|size:9',
+            // 'password' => 'required|min:6',
+            'nim' => 'required|size:9',
+            'prodi' => 'required',
+            'tahun_kader' => 'required',
+            'angkatan' => 'required',
+            'predikat' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'alamat_asal' => 'required',
+            'alamat_sekarang' => 'required',
+            'email' => 'required|max:50',
+            'nomor_seluler' => 'required',
+            'wa' => 'required|max:20',
+            'id_line' => 'required',
+            'ig' => 'required',
+            'fb' => 'required',
+            'avatar' => 'max:1024'
+        ]);
+
+        if($request->avatar) {
+            $nameAvatar = DB::table('members')->where('id', $member->id)->first();
+            Storage::delete($nameAvatar->avatar);
+            Member::where('id', $member->id)->update([
+                'avatar' => $request->file('avatar')->store('members/avatars')
+            ]);
+        }       
+
+        Member::where('id', $member->id)->update([
+            'predikat' => $request->predikat,
+            'nama' => $request->nama,
+            'nia' => $request->nia,
+            'nim' => $request->nim,
+            'prodi' => $request->prodi,
+            'tahun_kader' => $request->tahun_kader,
+            'angkatan' => $request->angkatan,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'alamat_asal' => $request->alamat_asal,
+            'alamat_sekarang' => $request->alamat_sekarang,
+            'email' => $request->email,
+            'nomor_seluler' => $request->nomor_seluler,
+            'wa' => $request->wa,
+            'id_line' => $request->id_line,
+            'ig' => $request->ig,
+            'fb' => $request->fb
+        ]);
+
+        return redirect()->back()->with('status', 'Data Diri Berhasil Diubah!');
     }
 
     function logout()

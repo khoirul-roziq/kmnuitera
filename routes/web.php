@@ -26,8 +26,10 @@ Route::get('/login', [MembersController::class, 'login'])->middleware('AlreadyLo
 Route::post('/check', [MembersController::class, 'check']);
 Route::get('/logout', [MembersController::class, 'logout']);
 Route::get('/dashboard', [MembersController::class, 'dashboard'])->middleware('IsLogged');
+Route::get('/members/{member}/editprofile', [MembersController::class, 'editprofile']);
+Route::put('/members/{member}', [MembersController::class, 'updateprofile']);
 
-Route::get('/members', [MembersController::class, 'index']);
+Route::get('/members', [MembersController::class, 'index'])->middleware('IsLogged');
 Route::get('/members/create', [MembersController::class, 'create']);
 Route::post('/members', [MembersController::class, 'store']);
 Route::get('/members/{member}', [MembersController::class, 'show']);

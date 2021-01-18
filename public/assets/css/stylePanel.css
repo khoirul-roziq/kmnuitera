@@ -2,6 +2,11 @@ body {
     background-color: rgb(247, 247, 247);
 }
 
+.contDashboard {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 form,
 .card {
     width: 80%;
